@@ -26,14 +26,18 @@ This project demonstrates how CDMA technology works by implementing a simulation
 
 ## Files
 
-- `main.py`: Main implementation containing Walsh code generation and CDMA simulation
+- `main.py`: Improved main implementation with object-oriented design and input validation
+- `cdma_advanced.py`: Advanced version with visualization, noise simulation, and analysis features
+- `test_cdma.py`: Test suite to verify functionality and demonstrate improvements
 - `logo_CDMA.py`: ASCII art logo for the application
+- `requirements.txt`: Python package dependencies
 - `README.md`: This documentation file
 
 ## Requirements
 
-- Python 3.x
-- NumPy
+- Python 3.7+
+- NumPy (for mathematical operations)
+- Matplotlib (for advanced visualization features, optional)
 
 ## Installation
 
@@ -47,22 +51,85 @@ cd CDMA-Implementation
 2. Install required dependencies:
 
 ```bash
-pip install numpy
+pip install -r requirements.txt
+```
+
+Or install individually:
+
+```bash
+pip install numpy matplotlib
 ```
 
 ## Usage
 
-Run the main program:
+### Basic CDMA Simulation
+
+Run the improved main program:
 
 ```bash
 python main.py
 ```
 
-Follow the interactive prompts:
+### Advanced Features
 
-1. Enter data bits (0 or 1) for each of the 8 stations
-2. Select which station you want to decode (1-8)
-3. The program will display the recovered data bit
+Run the advanced version with additional features:
+
+```bash
+python cdma_advanced.py
+```
+
+Choose from:
+
+1. **Basic CDMA Simulation** - Interactive version with input validation
+2. **Advanced Analysis** - Includes orthogonality checking and batch decoding
+3. **Noise Simulation** - Tests system performance with channel noise
+4. **Visualization Mode** - Visual representation of Walsh codes (requires matplotlib)
+
+### Testing
+
+Run the test suite to verify functionality:
+
+```bash
+python test_cdma.py
+```
+
+This will test:
+
+- Walsh code generation and orthogonality
+- Encoding and decoding processes
+- Error handling capabilities
+
+## Code Improvements
+
+The codebase has been significantly improved with the following enhancements:
+
+### Object-Oriented Design
+
+- **Class-based architecture**: `CDMASystem` class encapsulates all CDMA functionality
+- **Modular functions**: Each operation is separated into logical methods
+- **Reusable code**: Easy to extend and modify for different configurations
+
+### Input Validation & Error Handling
+
+- **Robust input validation**: Ensures only valid data bits (0 or 1) are accepted
+- **Error handling**: Graceful handling of invalid inputs and exceptions
+- **User-friendly prompts**: Clear instructions and error messages
+
+### Advanced Features (cdma_advanced.py)
+
+- **Visualization**: Graphical representation of Walsh code matrix
+- **Orthogonality analysis**: Mathematical verification of code properties
+- **Noise simulation**: Testing system robustness against channel noise
+- **Batch processing**: Simultaneous decoding of all stations
+- **Performance metrics**: Bit Error Rate (BER) calculation
+
+### Code Quality Improvements
+
+- **Documentation**: Comprehensive docstrings and comments
+- **Type hints**: Better code readability and IDE support
+- **Clean structure**: Elimination of repetitive code
+- **Efficient algorithms**: Optimized Walsh code generation
+- **Professional formatting**: Following Python best practices
 
 ## Example
 
